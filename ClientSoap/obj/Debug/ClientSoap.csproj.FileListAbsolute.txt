@@ -1,0 +1,10 @@
+C:\Users\BDGSA\Documents\Visual Studio 2017\Projects\ClientSoap\ClientSoap\ClientSoap\bin\Debug\ClientSoap.exe.config
+C:\Users\BDGSA\Documents\Visual Studio 2017\Projects\ClientSoap\ClientSoap\ClientSoap\bin\Debug\ClientSoap.exe
+C:\Users\BDGSA\Documents\Visual Studio 2017\Projects\ClientSoap\ClientSoap\ClientSoap\bin\Debug\ClientSoap.pdb
+C:\Users\BDGSA\Documents\Visual Studio 2017\Projects\ClientSoap\ClientSoap\ClientSoap\obj\Debug\ClientSoap.csprojAssemblyReference.cache
+C:\Users\BDGSA\Documents\Visual Studio 2017\Projects\ClientSoap\ClientSoap\ClientSoap\obj\Debug\ClientSoap.Form1.resources
+C:\Users\BDGSA\Documents\Visual Studio 2017\Projects\ClientSoap\ClientSoap\ClientSoap\obj\Debug\ClientSoap.Properties.Resources.resources
+C:\Users\BDGSA\Documents\Visual Studio 2017\Projects\ClientSoap\ClientSoap\ClientSoap\obj\Debug\ClientSoap.csproj.GenerateResource.cache
+C:\Users\BDGSA\Documents\Visual Studio 2017\Projects\ClientSoap\ClientSoap\ClientSoap\obj\Debug\ClientSoap.csproj.CoreCompileInputs.cache
+C:\Users\BDGSA\Documents\Visual Studio 2017\Projects\ClientSoap\ClientSoap\ClientSoap\obj\Debug\ClientSoap.exe
+C:\Users\BDGSA\Documents\Visual Studio 2017\Projects\ClientSoap\ClientSoap\ClientSoap\obj\Debug\ClientSoap.pdb
