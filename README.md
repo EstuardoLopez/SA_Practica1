@@ -10,23 +10,45 @@ Herramienta `Cliente SOAP` utilizado para consumir [servicio web](https://api.so
 ### Como utilizarlo
 * `ClienteSOAP.cs`
 ```C#
+
+public ClientSOAP()
+{
+    client = new SoftwareAvanzadoAuth.administratorcontact100Client();
+    //Usuario 
+    client.ClientCredentials.UserName.UserName = "sa";
+    //Contraseña
+    client.ClientCredentials.UserName.Password = "usac";
+}
+        
 public List<ContactoModel> GetContacts(ContactoModel filter)
 {
     List<ContactoModel> result = new List<ContactoModel>();
-    SoftwareAvanzado.readListResponse_list_item[] resultWS = null;            
-    resultWS = client.readList(0, 50, filter.Nombre,null,null,null,null);
-
-    if (resultWS != null && resultWS.Length >= 0)
+    using (new OperationContextScope(client.InnerChannel))
     {
-        for(int i=0;  i < resultWS.Length; i++)
+        // Agregamos un HTTP Header a la peticion donde especificamos el tipo de autenticacion
+        string auth = "Basic " + Convert.ToBase64String(System.Text.Encoding.Default
+        .GetBytes(client.ClientCredentials.UserName.UserName + ":" + client.ClientCredentials.UserName.Password));
+        HttpRequestMessageProperty requestMessage = new HttpRequestMessageProperty();
+        requestMessage.Headers["Authorization"] = auth;
+        OperationContext.Current.OutgoingMessageProperties[HttpRequestMessageProperty.Name] = requestMessage;
+       // client.GetCampaignIds(out campaignRecords);
+
+        SoftwareAvanzadoAuth.readListResponse_list_item[] resultWS = null;
+        resultWS = client.readList(0, 50, filter.Nombre, null, null, null, null);
+
+        if (resultWS != null && resultWS.Length >= 0)
         {
-            result.Add(new ContactoModel()
+            for (int i = 0; i < resultWS.Length; i++)
             {
-                Id = resultWS[i].id,
-                Nombre = resultWS[i].name
-            });
+                result.Add(new ContactoModel()
+                {
+                    Id = resultWS[i].id,
+                    Nombre = resultWS[i].name
+                });
+            }
         }
     }
+
     return result;
 }
 ```
