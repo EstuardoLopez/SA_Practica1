@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -51,6 +54,11 @@
     <Compile Include="Client\ClientSOAP.cs" />
     <Compile Include="Client\ContactoModel.cs" />
     <Compile Include="Client\ResponseWS.cs" />
+    <Compile Include="Connected Services\SoftwareAvanzadoAuth\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\SoftwareAvanzado\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -62,6 +70,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Parte1\TokenGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -76,6 +85,55 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\ClientSoap.SoftwareAvanzadoAuth.createResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\ClientSoap.SoftwareAvanzadoAuth.deleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\ClientSoap.SoftwareAvanzadoAuth.readItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\ClientSoap.SoftwareAvanzadoAuth.readItemResponse_item.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\ClientSoap.SoftwareAvanzadoAuth.readListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\ClientSoap.SoftwareAvanzadoAuth.readListResponse_list_item.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\ClientSoap.SoftwareAvanzadoAuth.task_applyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\ClientSoap.SoftwareAvanzadoAuth.task_checkinResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\ClientSoap.SoftwareAvanzadoAuth.task_checkoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\ClientSoap.SoftwareAvanzadoAuth.task_deleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\ClientSoap.SoftwareAvanzadoAuth.task_featuredResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\ClientSoap.SoftwareAvanzadoAuth.task_publishResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\ClientSoap.SoftwareAvanzadoAuth.task_saveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\ClientSoap.SoftwareAvanzadoAuth.task_unfeaturedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\ClientSoap.SoftwareAvanzadoAuth.task_unpublishResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\ClientSoap.SoftwareAvanzadoAuth.updateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\index.wsdl" />
     <None Include="Connected Services\SoftwareAvanzado\ClientSoap.SoftwareAvanzado.createResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -125,6 +183,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\SoftwareAvanzado\index.wsdl" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -142,6 +201,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\SoftwareAvanzadoAuth\" />
     <WCFMetadataStorage Include="Connected Services\SoftwareAvanzado\" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +212,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\SoftwareAvanzado\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Parte2\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SoftwareAvanzadoAuth\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
